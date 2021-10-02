@@ -1,12 +1,14 @@
   
 import logging
+import random
 
 from aiogram.dispatcher.filters import Command
 from aiogram.types import Message, CallbackQuery
 
 from keyboards.inline.commands_buttons import *
-from keyboards.inline.courses_buttons import *
+from keyboards.inline.years_buttons import *
 from loader import dp, bot
+from config import file_animali, file_insulti
 
 
 
@@ -33,8 +35,8 @@ async def show_commands(message: Message):
     )'''
 
 
-@dp.callback_query_handler(text_contains="courses")
-async def courses_query(call: CallbackQuery):
+@dp.callback_query_handler(text_contains="years")
+async def years_query(call: CallbackQuery):
 
     '''await call.answer(cache_time=60)
 
@@ -42,8 +44,8 @@ async def courses_query(call: CallbackQuery):
 
     logging.info(f"{callback_data=}") '''
 
-    await call.message.edit_text(text="Selezionare il semestre d'interesse")
-    await call.message.edit_reply_markup(reply_markup=courses)
+    await call.message.edit_text(text="Selezionare l'anno d'interesse")
+    await call.message.edit_reply_markup(reply_markup=years)
 
 
 @dp.callback_query_handler(text_contains="info")
@@ -71,6 +73,21 @@ async def back_commands(call: CallbackQuery):
     await call.message.edit_text(text="  \U0001F5A5 LISTA COMANDI")
     await call.message.edit_reply_markup(reply_markup=commands)
 
+@dp.message_handler(commands=['bestemmia'])
+async def show_commands(message: Message):
 
+    animale = str(random.choice(open(file_animali).readlines()))
+    animale = animale.strip("\n").lower()
+    insulto = str(random.choice(open(file_insulti).readlines()))
+    insulto = insulto.strip("\n").lower()
+    bestemmia = 'Dio ' + animale + ' ' + insulto 
 
+    await message.reply(text=bestemmia)
+
+    '''await message.reply(
+        "Ciao! Sono UniBot\n"
+        "\nPer usarmi digita il comando /corsi e poi seleziona il semestre e il corso che ti interessa\n"
+        "\nPer dubbi riguardo i canali contatta @KLS_01\n"
+        "\nPer dubbi e/o segnalazioni di bug riguardanti il bot, contatta @Rcodi"
+    )'''
 

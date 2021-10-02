@@ -3,21 +3,13 @@ import logging
 from aiogram.dispatcher.filters import Command
 from aiogram.types import Message, CallbackQuery
 
-from keyboards.inline.courses_buttons import *
-from keyboards.inline.commands_buttons import *
+from keyboards.inline.years_buttons import *
+from keyboards.inline.first_year_buttons import *
 from keyboards.inline.md_buttons import *
 
 from loader import dp, bot
 
-@dp.message_handler(Command("corsi"))
-async def show_courses(message: Message):
-
-
-    await message.answer(text="Selezionare il semestre d'interesse",
-                         reply_markup=courses)
-
-
-@dp.callback_query_handler(text_contains="first_semester")
+@dp.callback_query_handler(text_contains="first_year_first_semester_callback")
 async def first_semester_query(call: CallbackQuery):
 
     '''await call.answer(cache_time=60)
@@ -27,14 +19,14 @@ async def first_semester_query(call: CallbackQuery):
     logging.info(f"{callback_data=}")'''
 
     await call.message.edit_text(text="Ecco i corsi del primo semestre")
-    await call.message.edit_reply_markup(reply_markup=first_keyboard)
+    await call.message.edit_reply_markup(reply_markup=first_year_first_semester_keyboard)
 
 
-@dp.callback_query_handler(text_contains="second_semester")
+@dp.callback_query_handler(text_contains="first_year_second_semester_callback")
 async def second_semester_query(call: CallbackQuery):
 
     await call.message.edit_text(text="Ecco i corsi del secondo semestre")
-    await call.message.edit_reply_markup(reply_markup=second_keyboard)
+    await call.message.edit_reply_markup(reply_markup=first_year_second_semester_keyboard)
 
 
 '''@dp.callback_query_handler(text="cancel")
@@ -48,13 +40,13 @@ async def cancel_buying(call: CallbackQuery):
 async def back_semester(call: CallbackQuery):
 
     await call.message.edit_text(text="Selezionare il semestre d'interesse")
-    await call.message.edit_reply_markup(reply_markup=courses)
+    await call.message.edit_reply_markup(reply_markup=first_year_keyboard)
 
-@dp.callback_query_handler(text_contains="back_commands")
+@dp.callback_query_handler(text_contains="back_years")
 async def back_commands(call: CallbackQuery):
 
-    await call.message.edit_text(text="  \U0001F5A5 LISTA COMANDI")
-    await call.message.edit_reply_markup(reply_markup=commands)
+    await call.message.edit_text(text="Selezionare l'anno d'interesse")
+    await call.message.edit_reply_markup(reply_markup=years)
 
 @dp.callback_query_handler(text_contains="MD")
 async def md_query(call: CallbackQuery):

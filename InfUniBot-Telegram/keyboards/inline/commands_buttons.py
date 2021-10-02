@@ -5,8 +5,8 @@ from config import URLS
 # KEYBOARD INIZIALE 
 commands = InlineKeyboardMarkup(row_width=2,)
 
-courses_button = InlineKeyboardButton(text="Corsi \U0001F4D6", callback_data="courses")
-commands.insert(courses_button)
+years_button = InlineKeyboardButton(text="Corsi \U0001F4D6", callback_data="years")
+commands.insert(years_button)
 
 alerts_button = InlineKeyboardButton(text="Avvisi \U000026A0", url=URLS['alerts'])
 commands.insert(alerts_button)

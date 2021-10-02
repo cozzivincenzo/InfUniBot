@@ -1,4 +1,4 @@
-TOKEN="ODE2MzI0MjgzNzgxMjE4MzI0.YD5TOw.3hqHkAo6rmFyIbjBG8JQZi7XOmc"
+TOKEN="ODE2MzI0MjgzNzgxMjE4MzI0.YD5TOw.dZcuiZl639VIxEN6gwYOMTbJ9c0"
 
 URLS = {
     'ADE' : "https://t.me/joinchat/AAAAAFNzlvsk5FD6kLAM3w",
