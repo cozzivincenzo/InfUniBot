@@ -16,7 +16,7 @@ second_semester_string = string_array['PSD'] + string_array['MMI'] + string_arra
 
 social_string = string_array['whatsapp'] + string_array['telegram'] + string_array['discord']
 
-note_string = string_array['hubmd'] + string_array['nicotera'] + string_array['notion']
+note_string = string_array['hubmd'] + string_array['nicotera']
 
 unisa_string = string_array['elearning'] + string_array['unisa'] + string_array['moodle'] + string_array['esse3']
 

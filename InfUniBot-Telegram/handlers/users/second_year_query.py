@@ -21,11 +21,11 @@ async def first_semester_query(call: CallbackQuery):
     await call.message.edit_reply_markup(reply_markup=second_year_first_semester_keyboard)
 
 
-'''@dp.callback_query_handler(text_contains="second_year_second_semester_callback")
+@dp.callback_query_handler(text_contains="second_year_second_semester_callback")
 async def second_semester_query(call: CallbackQuery):
 
     await call.message.edit_text(text="Ecco i corsi del secondo semestre")
-    await call.message.edit_reply_markup(reply_markup=second_year_second_semester_keyboard)'''
+    await call.message.edit_reply_markup(reply_markup=second_year_second_semester_keyboard) 
 
 
 '''@dp.callback_query_handler(text="cancel")
