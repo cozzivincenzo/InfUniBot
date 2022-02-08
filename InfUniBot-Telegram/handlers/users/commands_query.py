@@ -48,6 +48,12 @@ async def years_query(call: CallbackQuery):
     await call.message.edit_reply_markup(reply_markup=years)
 
 
+@dp.message_handler(commands=['corsi'])
+async def show_commands(message: Message):
+
+    await message.reply(text="Selezionare l'anno d'interesse", reply_markup=years)
+
+
 @dp.callback_query_handler(text_contains="info")
 async def info_query(call: CallbackQuery):
 
