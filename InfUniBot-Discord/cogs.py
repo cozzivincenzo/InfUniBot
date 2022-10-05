@@ -1,9 +1,18 @@
-import discord
-from discord.ext import commands
-from discord.utils import get
+import interactions
+from interactions.ext import molter
+from interactions import Embed
 from strings import *
 
-embed = discord.Embed()
+class Extend(molter.MolterExtension):
+    def __init__(self, bot: interactions.Client):
+        self.bot = bot
+
+    @molter.msg_command()
+    async def soup(self, ctx: molter.MolterContext):
+        await ctx.reply("give soup")
+
+def setup(bot: interactions.Client):
+    Extend(bot)
 
 class help(commands.Cog):
     def __init__(self, bot):
