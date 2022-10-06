@@ -35,8 +35,8 @@ async def cancel_buying(call: CallbackQuery):
     await call.message.delete()
 '''
 
-@dp.callback_query_handler(text_contains="back_semester")
-async def back_semester(call: CallbackQuery):
+@dp.callback_query_handler(text_contains="second_back_semester")
+async def second_back_semester(call: CallbackQuery):
 
     await call.message.edit_text(text="Selezionare il semestre d'interesse")
     await call.message.edit_reply_markup(reply_markup=second_year_keyboard)

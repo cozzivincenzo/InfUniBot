@@ -11,5 +11,8 @@ years.insert(first_year)
 second_year = InlineKeyboardButton(text="2° Anno", callback_data="second_year_callback")
 years.insert(second_year)
 
+third_year = InlineKeyboardButton(text="3° Anno", callback_data="third_year_callback")
+years.insert(third_year)
+
 back_button = InlineKeyboardButton(text="Indietro", callback_data="back_commands")
 years.insert(back_button)

@@ -28,7 +28,7 @@ first_year_first_semester_keyboard = InlineKeyboardMarkup(inline_keyboard=[
         InlineKeyboardButton(text="OFA \U0000270D", url=URLS['OFA']),
     ],
     [
-        InlineKeyboardButton(text="Indietro", callback_data="back_semester"),
+        InlineKeyboardButton(text="Indietro", callback_data="first_back_semester"),
     ]
 ])
 
@@ -43,7 +43,7 @@ first_year_second_semester_keyboard = InlineKeyboardMarkup(inline_keyboard=[
         InlineKeyboardButton(text="ANAL \U0001F4C9", url=URLS['ANAL'])
     ],
     [
-        InlineKeyboardButton(text="Indietro", callback_data="back_semester"),
+        InlineKeyboardButton(text="Indietro", callback_data="first_back_semester"),
     ]
 ])
 

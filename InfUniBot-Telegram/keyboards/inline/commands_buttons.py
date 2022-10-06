@@ -16,3 +16,6 @@ commands.insert(donation_button)
 
 info_button = InlineKeyboardButton(text="Info \U0001f916", callback_data="info")
 commands.insert(info_button)
+
+group_button = InlineKeyboardButton(text="Gruppo Studenti Informatica \U0001F34E", url=URLS['GROUP'])
+commands.insert(group_button)

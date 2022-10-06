@@ -5,6 +5,7 @@ from aiogram.types import Message, CallbackQuery
 
 from keyboards.inline.first_year_buttons import *
 from keyboards.inline.second_year_buttons import *
+from keyboards.inline.third_year_buttons import *
 from keyboards.inline.commands_buttons import *
 
 from loader import dp, bot
@@ -31,12 +32,12 @@ async def second_year_query(call: CallbackQuery):
     await call.message.edit_text(text="Selezionare il semestre d'interesse")
     await call.message.edit_reply_markup(reply_markup=second_year_keyboard)
 
-'''@dp.callback_query_handler(text_contains="third_year")
+@dp.callback_query_handler(text_contains="third_year_callback")
 async def third_year_query(call: CallbackQuery):
 
 
     await call.message.edit_text(text="Selezionare il semestre d'interesse")
-    await call.message.edit_reply_markup(reply_markup=third_year)'''
+    await call.message.edit_reply_markup(reply_markup=third_year_keyboard)
 
 @dp.callback_query_handler(text_contains="back_commands")
 async def back_commands(call: CallbackQuery):
