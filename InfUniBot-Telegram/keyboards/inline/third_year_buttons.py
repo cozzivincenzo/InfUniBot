@@ -14,6 +14,9 @@ third_year_keyboard.insert(third_year_second_semester)
 third_year_choose = InlineKeyboardButton(text="Esami a scelta", callback_data="third_year_choose_callback")
 third_year_keyboard.insert(third_year_choose)
 
+third_year_choose = InlineKeyboardButton(text="Accompagnamento al lavoro", url=URLS['LAVORO'])
+third_year_keyboard.insert(third_year_choose)
+
 back_button = InlineKeyboardButton(text="Indietro", callback_data="back_years")
 third_year_keyboard.insert(back_button)
 
@@ -58,8 +61,8 @@ third_year_choose_keyboard = InlineKeyboardMarkup(inline_keyboard=[
         InlineKeyboardButton(text="FIA \U0001F522", url=URLS['FIA'])
     ],
     [
-        InlineKeyboardButton(text="MM \U0001F522", url=URLS['MM']),
-        InlineKeyboardButton(text="MP \U0001F522", url=URLS['MP'])
+        InlineKeyboardButton(text="Musimathics \U0001F522", url=URLS['MM']),
+        InlineKeyboardButton(text="Mobile \U0001F522", url=URLS['MP'])
     ],
     [
         InlineKeyboardButton(text="Indietro", callback_data="third_back_semester"),
